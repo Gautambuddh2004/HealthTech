@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(),tailwindcss()],
    server: {
     proxy: {
-      "/api": "https://healthtech-backend-m2dv.onrender.com"
+      "/api": "http://localhost:5000"
     }
   },
   resolve: {
