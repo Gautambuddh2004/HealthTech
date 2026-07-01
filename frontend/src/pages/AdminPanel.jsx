@@ -59,7 +59,7 @@ const HospitalPanel = () => {
 
   const fetchHospitals = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/hospitals");
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospitals");
       const data = await res.json();
       setHospitals(data);
     } catch {
@@ -74,7 +74,7 @@ const HospitalPanel = () => {
   const handleLogin = async () => {
     setPasswordError("");
     try {
-      const res = await fetch("http://localhost:5000/api/admin/login", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: passwordInput }),
@@ -100,7 +100,7 @@ const HospitalPanel = () => {
     setSuccessMsg(""); setErrorMsg("");
     const token = localStorage.getItem("adminToken");
     try {
-      const res = await fetch("http://localhost:5000/api/admin/hospitals", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/admin/hospitals", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify({ ...form }),
@@ -129,7 +129,7 @@ const HospitalPanel = () => {
     if (!window.confirm("Sure ho? Yeh hospital delete ho jaayega!")) return;
     const token = localStorage.getItem("adminToken");
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/hospitals/${id}`, {
+      const res = await fetch(`https://healthtech-backend-m2dv.onrender.com/api/admin/hospitals/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
       });
@@ -286,7 +286,7 @@ const DoctorPanel = () => {
 
   const fetchDoctors = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/doctors");
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/doctors");
       const data = await res.json();
       setDoctors(data);
     } catch {
@@ -312,7 +312,7 @@ const DoctorPanel = () => {
     setLoading(true); setErrorMsg("");
     const token = localStorage.getItem("adminToken");
     try {
-      const res = await fetch("http://localhost:5000/api/admin/doctors", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/admin/doctors", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify({
@@ -348,7 +348,7 @@ const DoctorPanel = () => {
     if (!window.confirm("Sure ho? Yeh doctor delete ho jaayega!")) return;
     const token = localStorage.getItem("adminToken");
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/doctors/${id}`, {
+      const res = await fetch(`https://healthtech-backend-m2dv.onrender.com/api/admin/doctors/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
       });

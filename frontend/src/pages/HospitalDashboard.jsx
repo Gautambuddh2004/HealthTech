@@ -27,7 +27,7 @@ export default function HospitalDashboard() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/bookings/my", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/bookings/my", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -49,7 +49,7 @@ export default function HospitalDashboard() {
   const handleAccept = async (bookingId, appointmentTime) => {
     setActionLoading((prev) => ({ ...prev, [bookingId]: "accept" }));
     try {
-      const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}/accept`, {
+      const res = await fetch(`https://healthtech-backend-m2dv.onrender.com/api/bookings/${bookingId}/accept`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -80,7 +80,7 @@ export default function HospitalDashboard() {
   const handleReject = async (bookingId) => {
     setActionLoading((prev) => ({ ...prev, [bookingId]: "reject" }));
     try {
-      const res = await fetch(`http://localhost:5000/api/bookings/${bookingId}/reject`, {
+      const res = await fetch(`https://healthtech-backend-m2dv.onrender.com/api/bookings/${bookingId}/reject`, {
         method: "PUT",
         headers: {
           Authorization: `Bearer ${token}`,

@@ -7,7 +7,7 @@ const DoctorPage = () => {
   const [dbDoctors, setDbDoctors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/doctors")
+    fetch("https://healthtech-backend-m2dv.onrender.com/api/doctors")
       .then(res => res.json())
       .then(data => setDbDoctors(data))
       .catch(err => console.error("Doctors fetch error:", err));

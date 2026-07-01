@@ -120,7 +120,7 @@ export default function HospitalPage() {
   useEffect(() => {
     const fetchHospitals = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/hospitals");
+        const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospitals");
         const data = await res.json();
         setHospitals(data);
       } catch {

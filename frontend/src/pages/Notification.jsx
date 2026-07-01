@@ -15,7 +15,7 @@ export default function Notification() {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:5000/api/notification?email=${encodeURIComponent(user.email)}`
+        `https://healthtech-backend-m2dv.onrender.com/api/notification?email=${encodeURIComponent(user.email)}`
       );
       const data = await res.json();
       if (res.ok) setNotifications(data.notifications);
@@ -27,14 +27,14 @@ export default function Notification() {
   };
 
   const markAsRead = async (id) => {
-    await fetch(`http://localhost:5000/api/notification/${id}/read`, { method: "PUT" });
+    await fetch(`https://healthtech-backend-m2dv.onrender.com/api/notification/${id}/read`, { method: "PUT" });
     setNotifications((prev) =>
       prev.map((n) => (n._id === id ? { ...n, isRead: true } : n))
     );
   };
 
   const deleteNotification = async (id) => {
-    await fetch(`http://localhost:5000/api/notification/${id}`, { method: "DELETE" });
+    await fetch(`https://healthtech-backend-m2dv.onrender.com/api/notification/${id}`, { method: "DELETE" });
     setNotifications((prev) => prev.filter((n) => n._id !== id));
   };
 

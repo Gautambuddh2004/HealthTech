@@ -52,7 +52,7 @@ export default function Booking() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/validate-hospital?name=${encodeURIComponent(formData.hospital)}&email=${encodeURIComponent(formData.hospitalEmail)}`
+        `https://healthtech-backend-m2dv.onrender.com/api/validate-hospital?name=${encodeURIComponent(formData.hospital)}&email=${encodeURIComponent(formData.hospitalEmail)}`
       );
       const data = await res.json();
 
@@ -88,7 +88,7 @@ export default function Booking() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/booking", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

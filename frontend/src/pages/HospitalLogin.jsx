@@ -66,7 +66,7 @@ export default function HospitalLogin() {
     setLoading(true);
     resetErrors();
     try {
-      const res = await fetch("http://localhost:5000/api/hospital/login", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospital/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -96,7 +96,7 @@ export default function HospitalLogin() {
     if (!forgotEmail) { setError("Hospital email daalna zaroori hai."); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/hospital/forgot-password", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospital/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail }),
@@ -148,7 +148,7 @@ export default function HospitalLogin() {
     if (code.length < 6) { setError("6 digit OTP pura bharein."); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/hospital/verify-otp", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospital/verify-otp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail, otp: code }),
@@ -171,7 +171,7 @@ export default function HospitalLogin() {
     resetErrors();
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/hospital/forgot-password", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospital/forgot-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail }),
@@ -201,7 +201,7 @@ export default function HospitalLogin() {
     if (newPassword !== confirmPassword) { setError("Dono passwords match nahi kar rahe!"); return; }
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/hospital/reset-password", {
+      const res = await fetch("https://healthtech-backend-m2dv.onrender.com/api/hospital/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: forgotEmail, otp: otpValues.join(""), newPassword }),
