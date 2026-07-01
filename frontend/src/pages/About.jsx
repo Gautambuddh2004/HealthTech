@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './navbar'
+import Navbar from '..pages/navbar'
 import about1 from '../assets/about1.png'
 
 function About() {
