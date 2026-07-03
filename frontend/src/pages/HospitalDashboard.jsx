@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import { AuthContext } from "../context/AuthContext.jsx";
 
 export default function HospitalDashboard() {

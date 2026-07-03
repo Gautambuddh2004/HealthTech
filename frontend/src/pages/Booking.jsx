@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import booking from "../assets/booking.jpg";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import { useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext.jsx";
 

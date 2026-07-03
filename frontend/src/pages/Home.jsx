@@ -1,4 +1,4 @@
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 import main from "../assets/mainlanding.png" 
 import Card from "./Card" 
 import hosp from "../assets/hosp.jpg" 

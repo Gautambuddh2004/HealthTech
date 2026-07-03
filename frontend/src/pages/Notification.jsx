@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../context/AuthContext.jsx";
-import Navbar from "./navbar";
+import Navbar from "./Navbar";
 
 export default function Notification() {
   const { user } = useContext(AuthContext);

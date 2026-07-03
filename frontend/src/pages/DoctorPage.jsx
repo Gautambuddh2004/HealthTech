@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, Star, Award, Search } from 'lucide-react';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 
 const DoctorPage = () => {
   const [search, setSearch] = useState("");
